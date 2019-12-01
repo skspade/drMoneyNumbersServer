@@ -1,0 +1,38 @@
+type Transaction {
+  date: String
+  payee: String
+  category: String
+  description: String
+  outflow: Float
+  inflow: Float
+  cleared: Boolean
+  flagged: String
+}
+
+input TransactionInput {
+  date: String!
+  payee: String!
+  category: String!
+  description: String!
+  outflow: Float!
+  inflow: Float!
+  cleared: Boolean!
+  flagged: String!
+}
+
+type Account {
+  id:ID!
+  transactions: [Transaction]!
+}
+
+type Category {
+  name: String
+  budgeted: Float
+  spent: Float
+  available: Float
+}
+
+type CategoryGroup {
+  name: String
+  categories: [Category]
+}

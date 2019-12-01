@@ -1,0 +1,14 @@
+# import Transaction from "Types.graphql"
+type Mutation{
+saveTransaction(transaction:TransactionInput):Transaction
+}
+
+type Query{
+getTransactions(accountId:ID!):[Transaction]
+getCategories(accountId:ID!):[Transaction]
+}
+
+schema {
+    mutation: Mutation
+    query: Query
+}
