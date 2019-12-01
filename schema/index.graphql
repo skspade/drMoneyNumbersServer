@@ -1,4 +1,4 @@
-# import Transaction from "Types.graphql"
+# import {Transaction} from "schema/Types.graphql"
 type Mutation{
 saveTransaction(transaction:TransactionInput):Transaction
 }

@@ -1,7 +1,6 @@
 const path = require('path');
 const slsw = require('serverless-webpack');
 const nodeExternals = require('webpack-node-externals');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   context: __dirname,
@@ -38,6 +37,11 @@ module.exports = {
           experimentalWatchApi: true,
         },
       },
+      {
+        exclude: /node_modules/,
+        test: /\.graphql$/,
+        use: [{ loader: 'graphql-import-loader' }]
+      }
     ],
   },
   plugins: [

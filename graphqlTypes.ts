@@ -43,14 +43,14 @@ export type Transaction = {
 };
 
 export type TransactionInput = {
-  date?: Maybe<Scalars['String']>,
-  payee?: Maybe<Scalars['String']>,
-  category?: Maybe<Scalars['String']>,
-  description?: Maybe<Scalars['String']>,
-  outflow?: Maybe<Scalars['Float']>,
-  inflow?: Maybe<Scalars['Float']>,
-  cleared?: Maybe<Scalars['Boolean']>,
-  flagged?: Maybe<Scalars['String']>,
+  date: Scalars['String'],
+  payee: Scalars['String'],
+  category: Scalars['String'],
+  description: Scalars['String'],
+  outflow: Scalars['Float'],
+  inflow: Scalars['Float'],
+  cleared: Scalars['Boolean'],
+  flagged: Scalars['String'],
 };
 
 

@@ -1,16 +1,7 @@
-// graphql.js
-const typeDefs = require('/schema/index.graphql');
+import * as resolvers from './resolvers'
+import {ApolloServer} from 'apollo-server-lambda'
+const typeDefs = require('./schema/index.graphql');
 
-
-const { ApolloServer } = require('apollo-server-lambda');
-
-// Provide resolver functions for your schema fields
-const resolvers = {
-    Query: {
-        hello: () => 'Hello world!',
-    },
-};
-
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({ typeDefs, resolvers,playground:true  });
 
 exports.graphqlHandler = server.createHandler();

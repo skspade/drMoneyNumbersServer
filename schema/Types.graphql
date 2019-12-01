@@ -22,6 +22,7 @@ input TransactionInput {
 
 type Account {
   id:ID!
+  name:String!
   transactions: [Transaction]!
 }
 
